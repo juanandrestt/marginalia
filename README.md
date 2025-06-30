@@ -6,8 +6,8 @@
 
 ## Key Features
 
-- Track books, stories, and other media  
-- Write reviews, notes, and reflections (*marginalia*)  
+- Track books
+- Write reviews (*marginalia*)  
 - An AI assistant to get new recommendations  
 - Semantic search  
 - Clean, responsive UI with Bootstrap 5  
@@ -32,9 +32,9 @@ Inspired by:
 
 - **Backend:** Ruby on Rails 7  
 - **Frontend:** Bootstrap 5 + ERB views  
-- **Database:** PostgreSQL + PGVector  
+- **Database:** PostgreSQL + "neighbour" gem
 - **AI:** OpenAI API (embeddings + optional chat context)
-- **Auth:** Devise (optional)
+- **Auth:** Devise
 
 ---
 
