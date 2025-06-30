@@ -40,7 +40,7 @@ Inspired by:
 
 ## AI and Embeddings
 
-Marginalia integrates OpenAI’s `text-embedding-3-small` to:
+Marginalia integrates OpenAI's models to :
 
 - Embed user readings and lists  
 - Perform semantic search  
