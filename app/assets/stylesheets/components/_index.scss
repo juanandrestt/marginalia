@@ -3,3 +3,31 @@
 @import "avatar";
 @import "form_legend_clear";
 @import "navbar";
+
+// Custom button for Devise forms
+.btn-burgandy {
+  background-color: $burgandy;
+  color: $beige;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  transition: background 0.2s;
+  width: 100%;
+}
+.btn-burgandy:hover, .btn-burgandy:focus {
+  background-color: darken($burgandy, 10%);
+  color: $beige;
+}
+// Burgundy link for Devise forms
+.burgundy-link {
+  color: $burgandy !important;
+  text-decoration: underline;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.burgundy-link:hover,
+.burgundy-link:focus {
+  color: darken($burgandy, 10%) !important;
+  text-decoration: underline;
+}

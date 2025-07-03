@@ -1,8 +1,12 @@
 class ChatsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:index, :show, :create]
 
   def index
-    @chats = current_user.chats
+    if user_signed_in?
+      @chats = current_user.chats
+    else
+      @chats = Chat.none
+    end
     @chat = Chat.new
     @message = Message.new
   end
@@ -14,7 +18,7 @@ class ChatsController < ApplicationController
 
   def create
     @chat = Chat.new(model_id: "o4-mini-2025-04-16")
-    @chat.user = current_user
+    @chat.user = current_user if user_signed_in?
     if @chat.save
       redirect_to chat_path(@chat)
     else

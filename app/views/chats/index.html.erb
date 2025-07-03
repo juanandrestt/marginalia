@@ -1,12 +1,16 @@
 <div class="mb-4">
-  <% if current_user.chats.any? %>
-    <ul>
-      <% current_user.chats.each do |chat| %>
-        <li><%= link_to chat.id, chat_path(chat) %></li>
-      <% end %>
-    </ul>
+  <% if user_signed_in? %>
+    <% if current_user.chats.any? %>
+      <ul>
+        <% current_user.chats.each do |chat| %>
+          <li><%= link_to chat.id, chat_path(chat) %></li>
+        <% end %>
+      </ul>
+    <% else %>
+      There are no chats yet.
+    <% end %>
   <% else %>
-    There are no chats yet.
+    <p>You are not signed in. Sign in to see your chat history.</p>
   <% end %>
 </div>
 

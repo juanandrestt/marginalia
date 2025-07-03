@@ -1,10 +1,15 @@
 class BooksController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:show, :index]
   before_action :set_book, only: [:show, :mark_as_read]
 
   def show
-    @current_user_review = @book.reviews.where(user: current_user).first
-    @reviews = @book.reviews.where.not(user: current_user)
-    
+    if current_user
+      @current_user_review = @book.reviews.where(user: current_user).first
+      @reviews = @book.reviews.where.not(user: current_user)
+    else
+      @current_user_review = nil
+      @reviews = @book.reviews
+    end
     session[:last_viewed_book_url] = request.original_url
   end
 
