@@ -1,6 +1,5 @@
 generator client {
   provider = "prisma-client-js"
-  output   = "../app/generated/prisma"
 }
 
 datasource db {
@@ -25,6 +24,7 @@ model Books {
   author          String?
   publishing_year DateTime?
   genre           String?
+  cover_id        Int?
   reviews         Reviews[]
   bookmarks       Bookmarks[]
   readings        Readings[]
