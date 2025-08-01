@@ -1,8 +1,7 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
-import type { OpenLibraryResponse, ApiResponse } from "@/lib/types";
 
-export async function POST(request: NextRequest) {
+export async function POST() {
 	try {
 		const genres = [
 			"fantasy",
@@ -44,7 +43,10 @@ export async function POST(request: NextRequest) {
 	} catch (error) {
 		console.error(error);
 		return NextResponse.json(
-			{ message: "Error seeding database", error: error instanceof Error ? error.message : String(error) },
+			{
+				message: "Error seeding database",
+				error: error instanceof Error ? error.message : String(error),
+			},
 			{ status: 500 }
 		);
 	} finally {
