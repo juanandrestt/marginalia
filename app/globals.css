@@ -15,3 +15,7 @@ body {
 	color: var(--foreground);
 	font-family: "Aujournuit";
 }
+
+main {
+	font-size: 32px;
+}
